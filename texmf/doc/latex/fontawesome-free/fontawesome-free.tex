@@ -1,0 +1,54 @@
+\documentclass[10pt, a4paper]{ltxdoc}
+\def\fileversion{1.0.0}
+\def\filedate{October 10, 2024}
+\usepackage{\jobname}
+\usepackage{hologo}
+\usepackage{geometry}
+\usepackage{pdfpages}
+\usepackage{fontspec}
+
+\begin{document}
+\title{The \textsf{\jobname} package\\Up-to-date \hologo{LuaLaTeX} support for Font Awesome \fa{font-awesome}}
+\author{Marc Penninga\thanks{URL: \href{https://github.com/drs-p/fontawesome-free}{\fa{github} github.com/drs-p/fontawesome-free}}}
+\date{Version \fileversion; contains version 6.6.0 of the Font Awesome fonts}
+\maketitle
+
+\begin{abstract}
+    There are several packages on CTAN that provide access to the free \emph{Font Awesome} icons, but these have all become outdated and are missing many icons from newer versions of Font Awesome.
+    The \textsf{\jobname} package deals with this problem by building the \hologo{LaTeX} support dynamically from data in the fonts themselves; updating the package is as simple as replacing the font files with newer ones \fa{thumbs-up-o}. The drawback of this approach is that the package only works with \hologo{LuaLaTeX} \fa{face-frown-o}.
+\end{abstract}
+
+\tableofcontents
+
+\section{Usage}
+The \textsf{\jobname} package contains all 2,050 icons from the free subset of the Font Awesome fonts. \DescribeMacro{\fa}The package provides one command, \cs{fa}, with a single mandatory argument: the \meta{name} of the icon. Some icons have light or ``open'' variants, like \fa{file-pdf-o} versus \fa{file-pdf}. Those variants are accessed by adding \texttt{-o} to the icon name: \verb|\fa{file-pdf-o}| versus \verb|\fa{file-pdf}|. A full list of icons and their names is included in the appendices.
+
+By default, the Font Awesome icons have varying widths. \DescribeMacro{\fa*}The \cs{fa} command has a starred variant \cs{fa*} that produces fixed-width icons, by centering them in a 1.25em wide box.
+
+\section*{License}
+The Font Awesome Free fonts are released under the SIL Open Font License, version 1.1.
+The rest of this package is released under the LaTeX Project Public License, version 1.3c.
+
+All brand icons are trademarks of their respective owners.
+The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome or the author, nor vice versa.
+\strong{Please do not use brand logos for any purpose except to represent the company, product, or service to which they refer.}
+
+\newpage
+\newgeometry{margin=0pt}
+\phantomsection
+\addcontentsline{toc}{section}{Appendix A\quad List of icons}
+\includepdf[pages=-, nup=1x3, landscape]{iconlist.pdf}
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Appendix B\quad List of brands}
+\includepdf[pages=-, nup=1x3, landscape]{brandlist.pdf}
+
+% \PrintChanges
+% \PrintIndex
+
+\end{document}
+
+
+%% end of file `fontawesome.tex'.
+

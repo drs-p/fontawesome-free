@@ -1,0 +1,15 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{fontawesome-free}[2024-10-10  v1.0.0]
+
+\RequirePackage{iftex}
+\RequireLuaTeX
+
+\directlua{fa = require("fontawesome-free.lua")}
+
+\NewDocumentCommand{\fa}{s m}{%
+    \IfBooleanTF{#1}%
+        {\makebox[1.25em][c]{\directlua{fa.icon("#2")}}}%
+        {\directlua{fa.icon("#2")}}%
+}
+
+\endinput
