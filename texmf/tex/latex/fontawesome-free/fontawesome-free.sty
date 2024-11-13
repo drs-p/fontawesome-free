@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{fontawesome-free}[2024-10-10  v1.0.0]
+\ProvidesPackage{fontawesome-free}[2024-11-13  v1.0.1]
 
 \RequirePackage{iftex}
 \RequireLuaTeX
@@ -8,8 +8,8 @@
 
 \NewDocumentCommand{\fa}{s m}{%
     \IfBooleanTF{#1}%
-        {\makebox[1.25em][c]{\directlua{fa.icon("#2")}}}%
-        {\directlua{fa.icon("#2")}}%
+        {\makebox[1.25em][c]{\directlua{fa.print_icon("#2")}}}%
+        {\directlua{fa.print_icon("#2")}}%
 }
 
 \endinput

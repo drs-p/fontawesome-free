@@ -21,7 +21,7 @@ local function initialize()
 end
 
 
-function icon(name)
+function print_icon(name)
     if not is_initialized then initialize() end
 
     local b = fa.brands[name]
@@ -89,4 +89,4 @@ function print_all_icons(...)
 end
 
 
-return { icon = icon, print_all_icons = print_all_icons }
+return { print_icon = print_icon, print_all_icons = print_all_icons }
