@@ -10,7 +10,7 @@
 
 \NewDocumentCommand{\fa}{s m}{%
     \IfBooleanTF{#1}%
-        {\makebox[1.25em][c]{\directlua{fa.print_icon("#2")}}}%
+        {\makebox[1.25em][c]{\fa{#2}}}%
         {\directlua{fa.print_icon("#2")}}%
 }
 
