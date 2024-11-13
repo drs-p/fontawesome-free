@@ -71,8 +71,7 @@ function print_all_icons(...)
     local names, icons = {}, {}
     for _, t in ipairs{...} do
         for name, unicode in pairs(fa[t]) do
-            if not (ignore[name] or string.match(name, "-sign$")
-            ) then
+            if not (ignore[name] or string.match(name, "-sign$")) then
                 if t == "regular" then name = name .. "-o" end
                 table.insert(names, name)
                 icons[name] = string.format("\\%s\\char%d", t, unicode)
