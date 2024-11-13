@@ -1,6 +1,4 @@
 \documentclass[10pt, a4paper]{ltxdoc}
-\def\fileversion{1.0.1}
-\def\filedate{November 13, 2024}
 \usepackage{\jobname}
 \usepackage{hologo}
 \usepackage{geometry}
@@ -10,7 +8,9 @@
 \begin{document}
 \title{The \textsf{\jobname} package\\Up-to-date \hologo{LuaLaTeX} support for Font Awesome \fa{font-awesome}}
 \author{Marc Penninga\thanks{URL: \href{https://github.com/drs-p/fontawesome-free}{\fa{github} github.com/drs-p/fontawesome-free}}}
-\date{Version \fileversion; contains version 6.6.0 of the Font Awesome fonts}
+\makeatletter
+\date{Version \fontawesome@free@version\ (\fontawesome@free@date); contains version 6.6.0 of the Font Awesome fonts}
+\makeatother
 \maketitle
 
 \begin{abstract}
