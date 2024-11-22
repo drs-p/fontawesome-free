@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
-\def\fontawesome@free@date{2024-11-20}
-\def\fontawesome@free@version{1.1.0}
+\def\fontawesome@free@date{2024-11-22}
+\def\fontawesome@free@version{1.1.1}
 \ProvidesPackage{fontawesome-free}[\fontawesome@free@date \space v\fontawesome@free@version \space LuaLaTeX support for Font Awesome]
 
 \RequirePackage{iftex}
@@ -10,7 +10,7 @@
 
 \NewDocumentCommand{\fa}{s m}{%
     \IfBooleanTF{#1}%
-        {\makebox[1.25em][c]{\fa{#2}}}%
+        {\makebox[1.25em][c]{\directlua{fa.print_icon("#2")}}}%
         {\directlua{fa.print_icon("#2")}}%
 }
 
