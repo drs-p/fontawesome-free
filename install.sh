@@ -1,5 +1,5 @@
 #!/bin/bash
-TEXMFLOCAL=$HOME/texmf
+TEXMFLOCAL=$(kpsewhich -expand-var '$TEXMFHOME')
 
 cp -r texmf/fonts texmf/tex $TEXMFLOCAL
 texhash $TEXMFLOCAL
