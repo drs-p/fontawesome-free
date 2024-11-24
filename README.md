@@ -6,7 +6,7 @@ There are several packages on CTAN that provide access to the free Font Awesome 
 
 ## Usage
 
-The _fontawesome_free_ package contains all 2,058 icons from the free subset of the Font Awesome fonts. The package provides one command, `\fa`, with a single mandatory argument: the name of the icon. Some icons have light or 'open' variants. Those variants are accessed by adding `-o` to the icon name: `\fa{file-pdf-o}` versus `\fa{file-pdf}`. A full list of icons and their names is included in the documentation.
+The _fontawesome_free_ package contains all icons from the free subset of the Font Awesome fonts. The package provides one command, `\fa`, with a single mandatory argument: the name of the icon. Some icons have light or 'open' variants. Those variants are accessed by adding `-o` to the icon name: `\fa{file-pdf-o}` versus `\fa{file-pdf}`. A full list of icons and their names is included in the documentation.
 
 By default, the Font Awesome icons have varying widths. The `\fa` command has a starred variant `\fa*` that produces fixed-width icons, by centering them in a 1.25em wide box.
 
