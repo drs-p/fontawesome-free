@@ -18,12 +18,31 @@
     The \textsf{\jobname} package deals with this problem by building the \hologo{LaTeX} support dynamically from data in the fonts themselves; updating the package is as simple as replacing the font files with newer ones \fa{thumbs-up-o}. The drawback of this approach is that the package only works with \hologo{LuaLaTeX} \fa{face-frown-o}.
 \end{abstract}
 
+
 \tableofcontents
+
+
+\section{Installation}
+This package is installed by copying the contents of the \texttt{texmf/} directory to either your \texttt{\$TEXMFLOCAL} or your \texttt{\$TEXMFHOME} tree.
+Installing it in \texttt{\$TEXMFLOCAL} will make the package available to all users on the system; installing it in \texttt{\$TEXMFHOME} makes it available just for you.
+The exact values of \texttt{\$TEXMFLOCAL} and \texttt{\$TEXMFHOME} depend on your TeX installation; see your installation's documentation for more information.
+If you are using TeX Live, you can find the value of these variables by running
+\begin{center}
+    \verb|kpsewhich -expand-var '$TEXMFLOCAL'|
+\end{center}
+and similarly for \texttt{\$TEXMFHOME}.
+
 
 \section{Usage}
 The \textsf{\jobname} package contains all icons from the free subset of the Font Awesome fonts. \DescribeMacro{\fa}The package provides one command, \cs{fa}, with a single mandatory argument: the \meta{name} of the icon. Some icons have light or ``open'' variants, like \fa{file-pdf-o} versus \fa{file-pdf}. Those variants are accessed by adding \texttt{-o} to the icon name: \verb|\fa{file-pdf-o}| versus \verb|\fa{file-pdf}|. A full list of icons and their names is included in the appendices.
 
 By default, the Font Awesome icons have varying widths. \DescribeMacro{\fa*}The \cs{fa} command has a starred variant \cs{fa*} that produces fixed-width icons, by centering them in a 1.25em wide box.
+
+
+\section{Copyright}
+The fonts are Copyright 2024 Fonticons, Inc. (\url{https://fontawesome.com}) with Reserved Font Name: ``Font Awesome''.
+All other files are Copyright 2024 Marc Penninga.
+
 
 \section*{License}
 The Font Awesome Free fonts are released under the SIL Open Font License, version 1.1.
@@ -32,6 +51,7 @@ The rest of this package is released under the LaTeX Project Public License, ver
 All brand icons are trademarks of their respective owners.
 The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome or the author, nor vice versa.
 \strong{Please do not use brand logos for any purpose except to represent the company, product, or service to which they refer.}
+
 
 \newpage
 \newgeometry{margin=0pt}
