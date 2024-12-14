@@ -55,8 +55,8 @@ local t = {
     "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
     "u", "v", "w", "x", "y", "z", "asterisk", "at", "divide", "equals",
     "exclamation", "greater-than", "greater-than-equal", "hashtag", "hyphen",
-    "less-than", "less-than-equal", "minus", "notdef", ".notdef", "null",
-    "percent", "plus", "plus-minus", "question", "space", "trademark",
+    "less-than", "less-than-equal", "minus", "notdef", ".notdef", "not-equal",
+    "null", "percent", "plus", "plus-minus", "question", "space", "trademark",
     "zero-width-space"
 }
 
