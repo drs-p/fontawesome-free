@@ -5,9 +5,25 @@ local fontawesome_free = {
 }
 
 for fontname, fontfile in pairs(fontawesome_free) do
-    tex.sprint(string.format("\\font\\%s = {kpse:%s}", fontname, fontfile))
+    fontfile = kpse.find_file(fontfile, "opentype fonts")
+    if fontfile then
+        tex.sprint(string.format("\\font\\%s = \"[%s]\"", fontname, fontfile))
+        fontawesome_free[fontname] = fontfile
+    else
+        fontawesome_free[fontname] = nil
+    end
 end
 
+local fonts_version
+_, _, fonts_version = string.find(
+    fontloader.info(fontawesome_free.solid).version,
+    "%(Font Awesome version: ([%d.]+)%)"
+)
+fonts_version = fonts_version or "[\\emph{unknown}]"
+
+-- We cannot initialize the fa table at this point,
+-- because TeX hasn't loaded the fonts yet;
+-- hence we delay the initialization.
 
 local fa = {}
 local is_initialized = false
@@ -88,4 +104,8 @@ function print_all_icons(...)
 end
 
 
-return { print_icon = print_icon, print_all_icons = print_all_icons }
+return {
+    print_icon = print_icon,
+    print_all_icons = print_all_icons,
+    _fonts_version = fonts_version,
+}

@@ -6,11 +6,12 @@
 \usepackage{fontspec}
 
 \begin{document}
+\GetFileInfo{\jobname.sty}
+
 \title{The \textsf{\jobname} package\\Up-to-date \hologo{LuaLaTeX} support for Font Awesome \fa{font-awesome}}
 \author{Marc Penninga\thanks{URL: \href{https://github.com/drs-p/fontawesome-free}{\fa{github} github.com/drs-p/fontawesome-free}}}
-\makeatletter
-\date{Version \fontawesome@free@version\ (\fontawesome@free@date); contains version 6.7.1 of the Font Awesome fonts}
-\makeatother
+\date{Version \fileversion\ (\filedate); includes version \directlua{tex.sprint(fa._fonts_version)}\ of Font Awesome}
+
 \maketitle
 
 \begin{abstract}
