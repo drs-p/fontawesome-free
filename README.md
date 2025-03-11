@@ -12,18 +12,18 @@ class="sans-serif">fontawesome-free</span> package attempts to deal with
 the update problem by building the support dynamically from data in the
 fonts themselves; updating the package is then as simple as replacing
 the font files with newer ones. The drawback of this approach is that
-the package only works with .
+the package only works with LuaLaTeX.
 
 ### Installation
 
 This package is not (yet?) available from CTAN, so it must be installed
 manually; this is done by copying the contents of the `texmf/` directory
 to either your `$TEXMFLOCAL` or your `$TEXMFHOME` tree. Installing it in
-`$TEXMFLOCAL` will make the package available to all users on the
-system, but may require administrator rights; installing it in
-`$TEXMFHOME` makes it available just for you. The exact values of
-`$TEXMFLOCAL` and `$TEXMFHOME` depend on your TeX installation; see your
-installation’s documentation for more information.
+`$TEXMFLOCAL` will make the package available to all users on the system,
+but may require administrator rights; installing it in `$TEXMFHOME`
+makes it available only for you. The exact values of `$TEXMFLOCAL` and
+`$TEXMFHOME` depend on your TeX installation; see your installation’s
+documentation for more information.
 
 If you are using TeX Live, you can find the value of these variables by
 running
@@ -40,11 +40,13 @@ and similarly for `$TEXMFHOME`.
 
 The <span class="sans-serif">fontawesome-free</span> package contains
 all icons from the free subset of the Font Awesome fonts. The package
-provides one command, , with a single mandatory argument: the of the
-icon. Some icons have light or “open” variants, like versus . Those
-variants are accessed by adding `-o` to the icon name: `\fa{file-pdf-o}`
-versus `\fa{file-pdf}`. A full list of icons and their names is included
-in the appendices.
+provides one command, `\fa`, with a single mandatory argument:
+the _name_ of the icon.
+
+Some icons have light or “open” variants. Those variants are accessed
+by adding `-o` to the icon name: `\fa{file-pdf-o}` versus `\fa{file-pdf}`.
+A full list of icons and their names is included in the appendices
+of the [manual](https://github.com/drs-p/fontawesome-free/blob/main/texmf/doc/latex/fontawesome-free/fontawesome-free.pdf).
 
 By default, the Font Awesome icons have varying widths. The command has
 a starred variant that produces fixed-width icons, by centering them in
@@ -54,7 +56,7 @@ a 1.25em wide box.
 
 The Font Awesome fonts are Copyright 2024 Fonticons, Inc.
 (<https://fontawesome.com>) with Reserved Font Name: “Font Awesome”. All
-other files are Copyright 2024 Marc Penninga.
+other files are Copyright 2024-2025 Marc Penninga.
 
 ### License
 
