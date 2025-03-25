@@ -1,14 +1,20 @@
+\DocumentMetadata{
+  lang        = en,
+  pdfversion  = 2.0,
+  pdfstandard = ua-2,
+  pdfstandard = a-4f, %or a-4
+  testphase   = latest
+}
 \documentclass[10pt]{article}
 \usepackage{fontawesome-free}
 \usepackage{geometry}
-\geometry{paperwidth=99mm, paperheight=210mm, margin=15mm}
-\usepackage{longtable}
-\pagestyle{empty}
-\thispagestyle{empty}
+\geometry{paperwidth=70.25mm, paperheight=210mm, hmargin={5mm,0mm}, vmargin=15mm}
+\pagestyle{empty}\thispagestyle{empty}
 
 \begin{document}
-\def\thesection{Appendix~\Alph{section}}
+\def\thesection{\Alph{section}}
 \setcounter{section}{0}
 \section{List of icons}
-\directlua{fa.print_all_icons("solid", "regular")}
+\sffamily
+\directlua{fa._print_all_icons("solid", "regular")}
 \end{document}

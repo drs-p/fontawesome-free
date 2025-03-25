@@ -1,7 +1,13 @@
+\DocumentMetadata{
+  lang        = en,
+  pdfversion  = 2.0,
+  pdfstandard = ua-2,
+  pdfstandard = a-4f, %or a-4
+  testphase   = latest
+}
 \documentclass[10pt, a4paper]{ltxdoc}
 \usepackage{\jobname}
 \usepackage{hologo}
-\usepackage{geometry}
 \usepackage{pdfpages}
 
 \begin{document}
@@ -28,7 +34,7 @@ The drawback of this approach is that the package only works with \hologo{LuaLaT
 This package is not (yet?) available from CTAN, so it must be installed manually;
 this is done by copying the contents of the \texttt{texmf/} directory to either your \texttt{\$TEXMFLOCAL} or your \texttt{\$TEXMFHOME} tree.
 Installing it in \texttt{\$TEXMFLOCAL} will make the package available to all users on the system, but may require administrator rights;
-installing it in \texttt{\$TEXMFHOME} makes it available just for you.
+installing it in \texttt{\$TEXMFHOME} makes it available only for you.
 The exact values of \texttt{\$TEXMFLOCAL} and \texttt{\$TEXMFHOME} depend on your TeX installation; see your installation's documentation for more information.
 
 \pagebreak[2]
@@ -45,7 +51,7 @@ The \textsf{\jobname} package contains all icons from the free subset of the Fon
 
 Some icons have light or ``open'' variants, like \fa{file-pdf-o} versus \fa{file-pdf}.
 Those variants are accessed by adding \texttt{-o} to the icon name: \verb|\fa{file-pdf-o}| versus \verb|\fa{file-pdf}|.
-A full list of icons and their names is included in the appendices.
+A list of all icons and their names is included in the appendices.
 
 By default, the Font Awesome icons have varying widths.
 \DescribeMacro{\fa*}The \cs{fa} command has a starred variant \cs{fa*} that produces fixed-width icons, by centering them in a 1.25em wide box.
@@ -65,16 +71,15 @@ The use of these trademarks does not indicate endorsement of the trademark holde
 \textbf{Please do not use brand logos for any purpose except to represent the company, product, or service to which they refer.}
 
 
-\newpage
-\newgeometry{margin=0pt}
+\clearpage
 \phantomsection
-\addcontentsline{toc}{section}{Appendix A\quad List of icons}
-\includepdf[pages=-, nup=3x1, landscape]{iconlist.pdf}
+\addcontentsline{toc}{section}{A\quad List of icons}
+\includepdf[pages=-, nup=4x1, landscape, offset={0mm 10mm}, alt={List of icons}]{iconlist.pdf}
 
-\newpage
+\clearpage
 \phantomsection
-\addcontentsline{toc}{section}{Appendix B\quad List of brands}
-\includepdf[pages=-, nup=3x1, landscape]{brandlist.pdf}
+\addcontentsline{toc}{section}{B\quad List of brand icons}
+\includepdf[pages=-, nup=4x1, landscape, offset={0mm 10mm}, alt={List of brand icons}]{brandlist.pdf}
 
 % \PrintChanges
 % \PrintIndex

@@ -45,12 +45,12 @@ the _name_ of the icon.
 
 Some icons have light or “open” variants. Those variants are accessed
 by adding `-o` to the icon name: `\fa{file-pdf-o}` versus `\fa{file-pdf}`.
-A full list of icons and their names is included in the appendices
+A list of all icons and their names is included in the appendices
 of the [manual](https://github.com/drs-p/fontawesome-free/blob/main/texmf/doc/latex/fontawesome-free/fontawesome-free.pdf).
 
 By default, the Font Awesome icons have varying widths. The command has
-a starred variant that produces fixed-width icons, by centering them in
-a 1.25em wide box.
+a starred variant `\fa*` that produces fixed-width icons, by centering
+them in a 1.25em wide box.
 
 ### Copyright
 

@@ -96,16 +96,19 @@ function print_all_icons(...)
     end
 
     table.sort(names)
-    tex.sprint("\\begin{longtable}{cl}")
     for _, name in ipairs(names) do
-        tex.sprint(string.format("%s&\\textit{%s}\\\\", icons[name], name))
+        tex.sprint(
+            string.format(
+                "\\noindent\\makebox[1.25em][c]{%s}\\hspace{1.25em}%s\\par",
+                icons[name],
+                name))
     end
-    tex.sprint("\\end{longtable}")
 end
 
 
 return {
     print_icon = print_icon,
-    print_all_icons = print_all_icons,
+    -- The next items are not part of the supported API and may change without warning!
+    _print_all_icons = print_all_icons,
     _fonts_version = fonts_version,
 }
