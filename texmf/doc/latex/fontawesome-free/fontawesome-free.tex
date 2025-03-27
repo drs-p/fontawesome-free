@@ -2,13 +2,14 @@
   lang        = en,
   pdfversion  = 2.0,
   pdfstandard = ua-2,
-  pdfstandard = a-4f, %or a-4
-  testphase   = latest
+  pdfstandard = a-4f,
+  % testphase   = latest
 }
 \documentclass[10pt, a4paper]{ltxdoc}
 \usepackage{\jobname}
 \usepackage{hologo}
 \usepackage{pdfpages}
+\input{fontawesome-free-iconlist.pageno}
 
 \begin{document}
 \GetFileInfo{\jobname.sty}
@@ -49,8 +50,8 @@ and similarly for \texttt{\$TEXMFHOME}.
 The \textsf{\jobname} package contains all icons from the free subset of the Font Awesome fonts.
 \DescribeMacro{\fa}The package provides one command, \cs{fa}, with a single mandatory argument: the \meta{name} of the icon.
 
-Some icons have light or ``open'' variants, like \fa{file-pdf-o} versus \fa{file-pdf}.
-Those variants are accessed by adding \texttt{-o} to the icon name: \verb|\fa{file-pdf-o}| versus \verb|\fa{file-pdf}|.
+Some icons have light or open variants, such as \fa{face-smile-o} and \fa{face-smile}.
+Those variants are accessed by adding \texttt{-o} to the icon name: \verb|\fa{face-smile-o}| instead of \verb|\fa{face-smile}|.
 A list of all icons and their names is included in the appendices.
 
 By default, the Font Awesome icons have varying widths.
@@ -58,7 +59,7 @@ By default, the Font Awesome icons have varying widths.
 
 
 \section{Copyright}
-The Font Awesome fonts are Copyright 2024 Fonticons, Inc. (\url{https://fontawesome.com}) with Reserved Font Name: ``Font Awesome''.
+All fonts are Copyright 2024 Fonticons, Inc. (\url{https://fontawesome.com}) with Reserved Font Name: ``Font Awesome''.
 All other files are Copyright 2024--2025 Marc Penninga.
 
 
@@ -74,15 +75,13 @@ The use of these trademarks does not indicate endorsement of the trademark holde
 \clearpage
 \phantomsection
 \addcontentsline{toc}{section}{A\quad List of icons}
-\includepdf[pages=-, nup=4x1, landscape, offset={0mm 10mm}, alt={List of icons}]{iconlist.pdf}
+\includepdf[pages=-, nup=4x1, landscape, offset={0mm 10mm}, pages=-\arabic{pgn}, alt={List of icons}]{fontawesome-free-iconlist.pdf}
+\stepcounter{pgn}
 
 \clearpage
 \phantomsection
 \addcontentsline{toc}{section}{B\quad List of brand icons}
-\includepdf[pages=-, nup=4x1, landscape, offset={0mm 10mm}, alt={List of brand icons}]{brandlist.pdf}
-
-% \PrintChanges
-% \PrintIndex
+\includepdf[pages=-, nup=4x1, landscape, offset={0mm 10mm}, pages=\arabic{pgn}-, alt={List of brand icons}]{fontawesome-free-iconlist.pdf}
 
 \end{document}
 
