@@ -43,8 +43,8 @@ all icons from the free subset of the Font Awesome fonts. The package
 provides one command, `\fa`, with a single mandatory argument:
 the _name_ of the icon.
 
-Some icons have light or “open” variants. Those variants are accessed
-by adding `-o` to the icon name: `\fa{file-pdf-o}` versus `\fa{file-pdf}`.
+Some icons have light or open variants. Those variants are accessed
+by adding `-o` to the icon name: `\fa{face-smile-o}` versus `\fa{face-smile}`.
 A list of all icons and their names is included in the appendices
 of the [manual](https://github.com/drs-p/fontawesome-free/blob/main/texmf/doc/latex/fontawesome-free/fontawesome-free.pdf).
 
@@ -54,9 +54,9 @@ them in a 1.25em wide box.
 
 ### Copyright
 
-The Font Awesome fonts are Copyright 2024 Fonticons, Inc.
-(<https://fontawesome.com>) with Reserved Font Name: “Font Awesome”. All
-other files are Copyright 2024-2025 Marc Penninga.
+All fonts are Copyright 2024 Fonticons, Inc. (<https://fontawesome.com>)
+with Reserved Font Name: “Font Awesome”.
+All other files are Copyright 2024-2025 Marc Penninga.
 
 ### License
 
