@@ -9,10 +9,11 @@ install:
 	cp -r texmf/fonts texmf/tex "$(TEXMFLOCAL)"
 	texhash "$(TEXMFLOCAL)"
 
-doc: install readme
+doc: install
 	cd $(DOC_DIR); make all
 	cp -r texmf/doc "$(TEXMFLOCAL)"
 
 dist: doc
+	mkdir -p dist
 	rm -f dist/fontawesome-free.zip
 	zip -r dist/fontawesome-free.zip texmf
