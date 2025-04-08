@@ -6,10 +6,28 @@
   % testphase   = latest
 }
 \documentclass[10pt, a4paper]{ltxdoc}
+\frenchspacing\raggedbottom\setlength\parskip{0pt}
 \usepackage{\jobname}
+
+\usepackage{geometry}
 \usepackage{hologo}
-\usepackage{pdfpages}
-\input{fontawesome-free-iconlist.pageno}
+\usepackage{multicol}
+\setlength{\columnsep}{.5cm}
+
+\usepackage{enumitem}
+\SetLabelAlign{center}{\makebox[\labelwidth][c]{#1}}
+\setlist{
+    topsep=0pt,
+    partopsep=0pt,
+    parsep=0pt,
+    itemsep=0pt,
+    leftmargin=2.5em,
+    labelwidth=1.25em,
+    labelsep=1.25em,
+    align=center,
+    listparindent=0pt,
+    rightmargin=0pt,
+}
 
 \begin{document}
 \GetFileInfo{\jobname.sty}
@@ -72,16 +90,20 @@ The use of these trademarks does not indicate endorsement of the trademark holde
 \textbf{Please do not use brand logos for any purpose except to represent the company, product, or service to which they refer.}
 
 
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{A\quad List of icons}
-\includepdf[pages=-, nup=4x1, landscape, offset={0mm 10mm}, pages=-\arabic{pgn}, alt={List of icons}]{fontawesome-free-iconlist.pdf}
-\stepcounter{pgn}
+\newgeometry{hmargin={1cm,.5cm}, vmargin={1cm,2cm}, footskip=1cm}
+\appendix
+
+\section{List of icons}
+\begin{multicols*}{3}
+    \directlua{fa._print_all_icons("solid", "regular")}
+\end{multicols*}
 
 \clearpage
-\phantomsection
-\addcontentsline{toc}{section}{B\quad List of brand icons}
-\includepdf[pages=-, nup=4x1, landscape, offset={0mm 10mm}, pages=\arabic{pgn}-, alt={List of brand icons}]{fontawesome-free-iconlist.pdf}
+\section{List of brand icons}
+\begin{multicols*}{3}
+    \directlua{fa._print_all_icons("brands")}
+\end{multicols*}
+
 
 \end{document}
 

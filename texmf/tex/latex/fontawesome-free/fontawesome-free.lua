@@ -96,13 +96,12 @@ function print_all_icons(...)
     end
 
     table.sort(names)
+    tex.sprint("\\begin{itemize}")
     for _, name in ipairs(names) do
         tex.sprint(
-            string.format(
-                "\\noindent\\makebox[1.25em][c]{%s}\\hspace{1.25em}%s\\par",
-                icons[name],
-                name))
+            string.format("\\item[%s] %s", icons[name], name))
     end
+    tex.sprint("\\end{itemize}")
 end
 
 
