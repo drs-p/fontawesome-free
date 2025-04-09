@@ -59,11 +59,12 @@ The drawback of this approach is that the package only works with \hologo{LuaLaT
 This package is not (yet?) available from CTAN, so it must be installed manually;
 this is done by copying the contents of the \texttt{texmf/} directory to either your \texttt{\$TEXMFLOCAL} or your \texttt{\$TEXMFHOME} tree.
 Installing it in \texttt{\$TEXMFLOCAL} will make the package available to all users on the system, but may require administrator rights;
-installing it in \texttt{\$TEXMFHOME} makes it available only for you.
-The exact values of \texttt{\$TEXMFLOCAL} and \texttt{\$TEXMFHOME} depend on your TeX installation; see your installation's documentation for more information.
+installing it in \texttt{\$TEXMFHOME} makes it available only for your user.
+The precise values of \texttt{\$TEXMFLOCAL} and \texttt{\$TEXMFHOME} depend on your \hologo{TeX} installation; see your installation's documentation for more information.
 
 \pagebreak[2]
-If you are using TeX Live, you can find the value of these variables by running
+If you are using \hologo{TeX}\,Live (or another \hologo{TeX} distribution that uses the \textsf{kpathsea} library),
+you can find the value of these variables by running
 \begin{center}
     \verb|kpsewhich -expand-var '$TEXMFLOCAL'|
 \end{center}
@@ -78,12 +79,12 @@ Some icons have light or open variants, such as \fa{face-smile-o} and \fa{face-s
 Those variants are accessed by adding \texttt{-o} to the icon name: \verb|\fa{face-smile-o}| instead of \verb|\fa{face-smile}|.
 A list of all icons and their names is included in the appendices.
 
-By default, the Font Awesome icons have varying widths.
+The Font Awesome icons have varying widths.
 \DescribeMacro{\fa*}The \cs{fa} command has a starred variant \cs{fa*} that produces fixed-width icons, by centering them in a 1.25em wide box.
 
 
 \section{Copyright}
-All fonts are Copyright 2024 Fonticons, Inc. (\url{https://fontawesome.com}) with Reserved Font Name: ``Font Awesome''.
+The font files are Copyright 2024 Fonticons, Inc. (\url{https://fontawesome.com}) with Reserved Font Name: ``Font Awesome''.
 All other files are Copyright 2024--2025 Marc Penninga.
 
 

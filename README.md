@@ -21,11 +21,12 @@ manually; this is done by copying the contents of the `texmf/` directory
 to either your `$TEXMFLOCAL` or your `$TEXMFHOME` tree. Installing it in
 `$TEXMFLOCAL` will make the package available to all users on the system,
 but may require administrator rights; installing it in `$TEXMFHOME`
-makes it available only for you. The exact values of `$TEXMFLOCAL` and
-`$TEXMFHOME` depend on your TeX installation; see your installation’s
+makes it available only for your user. The exact values of `$TEXMFLOCAL`
+and `$TEXMFHOME` depend on your TeX installation; see your installation’s
 documentation for more information.
 
-If you are using TeX Live, you can find the value of these variables by
+If you are using TeX Live (or another TeX distribution that uses
+the `kpathsea` library), you can find the value of these variables by
 running
 
 <div class="center">
@@ -48,13 +49,13 @@ by adding `-o` to the icon name: `\fa{face-smile-o}` versus `\fa{face-smile}`.
 A list of all icons and their names is included in the appendices
 of the [manual](https://github.com/drs-p/fontawesome-free/blob/main/texmf/doc/latex/fontawesome-free/fontawesome-free.pdf).
 
-By default, the Font Awesome icons have varying widths. The command has
-a starred variant `\fa*` that produces fixed-width icons, by centering
-them in a 1.25em wide box.
+The Font Awesome icons have varying widths. The `\fa` command has
+a starred variant `\fa*` that produces fixed-width icons,
+by centering them in a 1.25em wide box.
 
 ### Copyright
 
-All fonts are Copyright 2024 Fonticons, Inc. (<https://fontawesome.com>)
+The font files are Copyright 2024 Fonticons, Inc. (<https://fontawesome.com>)
 with Reserved Font Name: “Font Awesome”.
 All other files are Copyright 2024-2025 Marc Penninga.
 
