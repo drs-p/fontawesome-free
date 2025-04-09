@@ -6,28 +6,34 @@
   % testphase   = latest
 }
 \documentclass[10pt, a4paper]{ltxdoc}
-\frenchspacing\raggedbottom\setlength\parskip{0pt}
+\frenchspacing\setlength\parskip{0pt}\raggedbottom
 \usepackage{\jobname}
 
 \usepackage{geometry}
 \usepackage{hologo}
+\usepackage{luacode}
 \usepackage{multicol}
+
 \setlength{\columnsep}{.5cm}
 
-\usepackage{enumitem}
-\SetLabelAlign{center}{\makebox[\labelwidth][c]{#1}}
-\setlist{
-    topsep=0pt,
-    partopsep=0pt,
-    parsep=0pt,
-    itemsep=0pt,
-    leftmargin=2.5em,
-    labelwidth=1.25em,
-    labelsep=1.25em,
-    align=center,
-    listparindent=0pt,
-    rightmargin=0pt,
-}
+\newcommand*{\iconlistlabel}[1]{\makebox[\labelwidth][c]{#1}}
+\newenvironment{iconlist}
+    {\begin{list}
+        {}
+        {%
+            \setlength{\topsep}{0pt}%
+            \setlength{\parskip}{0pt}%
+            \setlength{\partopsep}{0pt}%
+            \setlength{\leftmargin}{2.5em}%
+            \setlength{\labelwidth}{1.25em}%
+            \setlength{\labelsep}{1.25em}%
+            \setlength{\itemindent}{0pt}%
+            \setlength{\listparindent}{\parindent}%
+            \setlength{\parsep}{0pt}%
+            \setlength{\itemsep}{0pt}%
+            \let\makelabel\iconlistlabel%
+        }}
+    {\end{list}}
 
 \begin{document}
 \GetFileInfo{\jobname.sty}
@@ -90,19 +96,31 @@ The use of these trademarks does not indicate endorsement of the trademark holde
 \textbf{Please do not use brand logos for any purpose except to represent the company, product, or service to which they refer.}
 
 
-\newgeometry{hmargin={1cm,.5cm}, vmargin={1cm,2cm}, footskip=1cm}
+\newgeometry{hmargin={1cm,0cm}, vmargin={1cm,2cm}, footskip=1cm}
 \appendix
+\sffamily
+\raggedright
+
+\begin{luacode}
+function print_icon(name, icon)
+    tex.sprint(string.format("\\item[%s] %s", icon, name))
+end
+\end{luacode}
 
 \section{List of icons}
-\begin{multicols*}{3}
-    \directlua{fa._print_all_icons("solid", "regular")}
-\end{multicols*}
+\begin{multicols}{3}
+    \begin{iconlist}
+        \directlua{fa._process_all_icons(print_icon, "solid", "regular")}
+    \end{iconlist}
+\end{multicols}
 
 \clearpage
 \section{List of brand icons}
-\begin{multicols*}{3}
-    \directlua{fa._print_all_icons("brands")}
-\end{multicols*}
+\begin{multicols}{3}
+    \begin{iconlist}
+        \directlua{fa._process_all_icons(print_icon, "brands")}
+    \end{iconlist}
+\end{multicols}
 
 
 \end{document}
